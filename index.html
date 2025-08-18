@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<header class="header" id="home">
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-left">Emmanuel</div>
@@ -26,18 +26,22 @@
         <span></span>
        </div>
     </nav>
-    <main>
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" >
         <div class="container">
-        <img src="Assets/Images/Profile.jpg" alt="Profile Photo" class="profile-photo">
+            <div>
+        <img src="Assets/Images/Dummy_Profile-removebg-preview.png" alt="Profile Photo" class="profile-photo">
+        </div>
+        <div>
         <h1 class="name">Emmanuel Ochieng</h1>
         <div class="animated-text">
             <span id="typing"></span>
+            </div>
         </div>
         </div>
     </section>
-
+</header>
+<main>
     <section class="about"  id="about">
         <div class="container">
             <div class="about-text">
@@ -47,11 +51,11 @@
                 </h4>
                 <p>
                     I'm Emmanuel, A pasionate web developer with a love for creating visually appealing user-friendly websites.
-                    I enjoy pwrking with HTML, CSS, JavaScript and mordern frameworks to build interactive experiences.
+                    I enjoy working with HTML, CSS, JavaScript and mordern frameworks to build interactive experiences.
                 </p>
                 <p>
                     My mission it to combine creativity with functionality, delivering designs that are both beutiful and practical.
-                    Outside coding, I enjoyexploring new tech, learning and sharing knowlende with others
+                    Outside coding, I enjoy exploring new tech, learning and sharing knowlende with others
                 </p>
 
             </div>
@@ -62,14 +66,26 @@
     <section class="services" id="services">
         <div class="container">
             <h2>Services</h2>
+            <div class="services-list">
             <ul>
-                <li>
-                    
+                <li class="development">
+                    <button>Web Development</button>
+                    <p>I specialize in creating visually appealing, user-friendly, and responsive websites that provide seamless experiences across all devices. My design approach combines creativity with functionality, ensuring that each project not only looks modern and professional but also meets the specific goals of the client. With skills in UI/UX design, HTML, CSS, and Figma, I design websites that enhance usability, accessibility, and brand identity. From wireframes and prototypes to fully developed interfaces, I focus on delivering clean, efficient, and engaging web designs that leave a lasting impression</p>
+                </li>
+                <li class="design">
+                    <button>Web Design</button>
+                    <p></p>
+                </li>
+                <li class="ux">
+                    <button >UX design</button>
+                    <p></p>
                 </li>
             </ul>
+            </div>
         </div>
     </section>
     </main>
+    <button id="backToTop" title="Back to Top"><img src="Assets/Icons/double_arrow_up.svg" alt=""></button>
     <script src="script.js"></script>
 </body>
 </html>

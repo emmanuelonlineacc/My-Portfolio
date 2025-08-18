@@ -1,6 +1,6 @@
 /*typing effect*/
 
-const words = ["Web Developer", "Web Designer", "Freelancer", "UX Designer"];
+const words = ["Web Developer", "Web Designer", "UX Designer"];
 let i = 0; // word index
 let j = 0; // letter index
 let deleting = false;
@@ -42,3 +42,18 @@ const navright = document.getElementById("navright");
 hamburger.addEventListener("click",()=>{
     navright.classList.toggle("active");
 });
+
+
+// Back to Top button functionality
+const backToTop = document.getElementById("backToTop");
+window.onscroll = function() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+};
+backToTop.onclick = function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
