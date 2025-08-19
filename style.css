@@ -16,6 +16,7 @@ body {
   background-repeat: no-repeat;
   justify-content: center;
   text-align: center;
+  gap: 20px;
 }
 
 /* Navbar */
@@ -435,4 +436,17 @@ button {
 
 .contact-info a:hover {
   color: aqua;
+}
+
+.contact .container{
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: auto;
+  padding: 30px;
+  flex-wrap: wrap;
+  box-shadow: 0px 4px 20px rgba(82, 193, 245, 0.2);
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
 }
