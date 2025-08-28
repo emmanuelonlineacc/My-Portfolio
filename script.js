@@ -83,20 +83,20 @@ window.addEventListener("scroll", () => {
 });
 
 // Popup for More Info button
-const moreInfoBtn = document.getElementById("moreInfoBtn");
-const moreInfoPopup = document.getElementById("moreInfoPopup");
-const closePopup = document.getElementById("closePopup");
+/*
 
-if (moreInfoBtn && moreInfoPopup && closePopup) {
+const moreInfoBtn = document.getElementById("moreInfoBtn");
+const aboutExtra = document.getElementById("aboutExtra");
+const minimizeBtn = document.getElementById("minimizeBtn");
+
+if (moreInfoBtn && aboutExtra && minimizeBtn) {
   moreInfoBtn.addEventListener("click", () => {
-    moreInfoPopup.style.display = "flex";
+    aboutExtra.style.display = "block";
+    moreInfoBtn.style.display = "none";
   });
-  closePopup.addEventListener("click", () => {
-    moreInfoPopup.style.display = "none";
-  });
-  window.addEventListener("click", (e) => {
-    if (e.target === moreInfoPopup) {
-      moreInfoPopup.style.display = "none";
-    }
+  minimizeBtn.addEventListener("click", () => {
+    aboutExtra.style.display = "none";
+    moreInfoBtn.style.display = "inline-block";
   });
 }
+*/
