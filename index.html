@@ -4,49 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emmanuel Ochieng Portfolio</title>
+    <meta name="description" content="Portfolio of Emmanuel Ochieng, a passionate web developer specializing in modern, user-friendly websites." />
+    <meta name="keywords" content="Emmanuel Ochieng, web developer, portfolio, HTML, CSS, JavaScript, UX, UI" />
+    <link rel="icon" href="Assets/Icons/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
   <body>
     <header class="header" id="home">
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="nav-left">Emmanuel</div>
+      <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="nav-left neon-glow">Emmanuel</div>
         <ul class="nav-right" id="navright">
-          <li><a href="#home">Home</a></li>
+          <li><a href="#home" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" id="hamburger" aria-label="Open navigation menu" tabindex="0">
           <span></span>
           <span></span>
           <span></span>
         </div>
       </nav>
     </header>
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="container">
-          <div>
-            <img
-              src="Assets/Images/Dummy_Profile-removebg-preview.png"
-              alt="Profile Photo"
-              class="profile-photo"
-            />
-          </div>
-          <div>
-            <h1 class="name">Emmanuel Ochieng</h1>
-            <div class="animated-text">
-              <span id="typing"></span>
-            </div>
-            <p class="description">
-              A passionate web developer with a love for creating visually
-              appealing user-friendly websites.
-            </p>
-          </div>
+    <section class="hero" id="hero">
+      <div class="container">
+        <div>
+          <img
+            src="Assets/Images/Dummy_Profile-removebg-preview.png"
+            alt="Emmanuel Ochieng Profile Photo"
+            class="profile-photo"
+          />
         </div>
-      </section>
+        <div>
+          <h1 class="name glow-text">Emmanuel Ochieng</h1>
+          <div class="animated-text">
+            <span id="typing"></span>
+          </div>
+          <p class="description">
+            A passionate web developer with a love for creating visually
+            appealing user-friendly websites.
+          </p>
+          <a href="#contact" class="cta-btn">Let's Connect</a>
+        </div>
+      </div>
+    </section>
     <main>
       <section class="about" id="about">
         <div class="container">
@@ -54,24 +60,33 @@
             <h2>About Me</h2>
             <h4>Hello!</h4>
             <p>
-              I'm Emmanuel, A pasionate web developer with a love for creating
+              I'm Emmanuel, a passionate web developer with a love for creating
               visually appealing user-friendly websites. I enjoy working with
-              HTML, CSS, JavaScript and mordern frameworks to build interactive
+              HTML, CSS, JavaScript and modern frameworks to build interactive
               experiences.
             </p>
             <p>
-              My mission it to combine creativity with functionality, delivering
-              designs that are both beutiful and practical. Outside coding, I
-              enjoy exploring new tech, learning and sharing knowlende with
-              others
+              My mission is to combine creativity with functionality, delivering
+              designs that are both beautiful and practical. Outside coding, I
+              enjoy exploring new tech, learning and sharing knowledge with
+              others.
             </p>
           </div>
-
-          <button>More info</button>
+          <button id="moreInfoBtn">More info</button>
+          <div id="moreInfoPopup" class="popup">
+            <div class="popup-content">
+              <span class="close" id="closePopup">&times;</span>
+              <p>
+                I am always eager to collaborate on exciting projects and bring ideas to life. 
+                My skills include responsive design, accessibility, and performance optimization.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
       <section class="services" id="services">
         <div class="container">
+          
           <div class="heading">
             <h2 class="one">Designs That Connect,</h2>
             <h2 class="two">Websites That Convert.</h2>
@@ -83,41 +98,85 @@
             prototypes in Figma, then translate them into clean, optimized code
             using HTML and CSS. From portfolios and business websites to custom
             landing pages, I focus on delivering elegant, functional, and
-            engaging digital experiences across all devices
+            engaging digital experiences across all devices.
           </p>
+          <ul class="my-services-list">
+  <li tabindex="0">
+    <div class="my-service-img-wrap">
+      <h3>Ux Research</h3>
+      <img src="Assets/Images/8da3970338c195e5c4fdd04045e71926.jpg" alt="UX Research">
+      <div class="my-service-desc">
+        To give your project a kickstart, I'll provide you detailed UX research.
+      </div>
+    </div>
+  </li>
+  <li tabindex="0">
+    <h3>UI Design</h3>
+    <div class="my-service-img-wrap">
+      <img src="Assets/Images/48069545c1a55b5af865ca26a27a0125.jpg" alt="UI Design">
+      <div class="my-service-desc">
+        To visualize how your website will appear, I'll design interactive UI.
+      </div>
+    </div>
+  </li>
+  <li tabindex="0">
+    <h3>Markup Design</h3>
+    <div class="my-service-img-wrap">
+      <img src="Assets/Images/228ee1aab79d495fd2f36e52d442fdb6.jpg" alt="Markup Design">
+      <div class="my-service-desc">
+        I'm proficient in creating markup for your web projects with clean structure.
+      </div>
+    </div>
+  </li>
+</ul>
           <div class="cards">
             <div class="card">
-              <div class="icon">📊</div>
-              <h3>UX Research</h3>
-              <p>
-                To give your project a kickstart, I'll provide you detailed UX
-                research.
-              </p>
+              <span class="icon">⚡</span>
+              <h3>Fast</h3>
+              <p>Fast load times and lag free interaction, my highest priority.</p>
             </div>
             <div class="card">
-              <div class="icon">💻</div>
-              <h3>UI Design</h3>
-              <p>
-                To visualize how your website will appear, I'll design
-                interactive UI.
-              </p>
+              <span class="icon">📱</span>
+              <h3>Responsive</h3>
+              <p>My layouts will work on any device, big or small.</p>
             </div>
             <div class="card">
-              <div class="icon">📑</div>
-              <h3>Markup Design</h3>
-              <p>
-                I'm proficient in creating markup for your web projects with
-                clean structure.
-              </p>
+              <span class="icon">🎨</span>
+              <h3>Intuitive</h3>
+              <p>Strong preference for easy to use, intuitive UX/UI.</p>
             </div>
           </div>
         </div>
       </section>
+<section class="projects" id="projects">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <img src="Assets/Images/project1.jpg" alt="Project 1 Screenshot" class="project-img" />
+        <h3>Portfolio Website</h3>
+        <p>A modern, responsive portfolio to showcase my skills and work. Built with HTML, CSS, and JavaScript.</p>
+        <a href="https://your-portfolio-link.com" target="_blank" class="project-link">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="Assets/Images/project2.jpg" alt="Project 2 Screenshot" class="project-img" />
+        <h3>Business Landing Page</h3>
+        <p>Clean and effective landing page for a local business, focused on conversions and mobile usability.</p>
+        <a href="https://your-business-link.com" target="_blank" class="project-link">View Project</a>
+      </div>
+      <div class="project-card">
+        <img src="Assets/Images/project3.jpg" alt="Project 3 Screenshot" class="project-img" />
+        <h3>UI Components Library</h3>
+        <p>A set of reusable UI components designed for rapid prototyping and consistent design.</p>
+        <a href="https://your-ui-library-link.com" target="_blank" class="project-link">View Project</a>
+      </div>
+    </div>
+  </div>
+</section>
       <section id="contact" class="contact">
         <div class="container">
           <h2>Contact Me</h2>
           <p>Feel free to reach me directly using the details below.</p>
-
           <div class="contact-info">
             <p>
               <a href="mailto:emmanuelonlineacc@gmail.com"
@@ -128,13 +187,26 @@
               <a href="tel:+254743942353">+254 743942353</a>
             </p>
             <p>Nairobi, Kenya</p>
+            <div class="social-links">
+              <a href="https://github.com/emmanuelonlineacc" target="_blank" aria-label="GitHub">
+                <img src="Assets/Icons/github.svg" alt="GitHub" width="24" height="24" />
+              </a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                <img src="Assets/Icons/linkedin.svg" alt="LinkedIn" width="24" height="24" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
     </main>
-    <button id="backToTop" title="Back to Top">
-      <img src="Assets/Icons/double_arrow_up.svg" alt="" />
+    <button id="backToTop" title="Back to Top" aria-label="Back to Top">
+      <img src="Assets/Icons/double_arrow_up.svg" alt="Back to Top" />
     </button>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Emmanuel Ochieng. All rights reserved.</p>
+      </div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

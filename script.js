@@ -1,5 +1,4 @@
-/*typing effect*/
-
+// Typing effect
 const words = ["Web Developer", "Web Designer", "UX Designer"];
 let i = 0; // word index
 let j = 0; // letter index
@@ -9,6 +8,7 @@ let speed = 150; // typing/deleting speed
 const typingSpan = document.getElementById("typing");
 
 function typeEffect() {
+  if (!typingSpan) return;
   let currentWord = words[i];
 
   if (!deleting) {
@@ -16,8 +16,8 @@ function typeEffect() {
     j++;
     if (j === currentWord.length) {
       deleting = true;
-      speed = 100; // pause before deleting
-      setTimeout(typeEffect, 1000); // wait before erasing
+      speed = 100;
+      setTimeout(typeEffect, 1000);
       return;
     }
   } else {
@@ -28,32 +28,75 @@ function typeEffect() {
       i = (i + 1) % words.length;
     }
   }
-
   setTimeout(typeEffect, speed);
 }
+if (typingSpan) typeEffect();
 
-typeEffect();
-
-/*hamburger*/
+// Hamburger menu
 const hamburger = document.getElementById("hamburger");
 const navright = document.getElementById("navright");
 
-hamburger.addEventListener("click", () => {
-  navright.classList.toggle("active");
-});
+if (hamburger && navright) {
+  hamburger.addEventListener("click", () => {
+    navright.classList.toggle("active");
+  });
+}
 
 // Back to Top button functionality
 const backToTop = document.getElementById("backToTop");
 window.onscroll = function () {
-  if (
-    document.body.scrollTop > 200 ||
-    document.documentElement.scrollTop > 200
-  ) {
-    backToTop.style.display = "block";
-  } else {
-    backToTop.style.display = "none";
+  if (backToTop) {
+    if (
+      document.body.scrollTop > 200 ||
+      document.documentElement.scrollTop > 200
+    ) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
   }
 };
-backToTop.onclick = function () {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
+if (backToTop) {
+  backToTop.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+}
+
+// Highlight active nav link on scroll
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-right li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 80;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// Popup for More Info button
+const moreInfoBtn = document.getElementById("moreInfoBtn");
+const moreInfoPopup = document.getElementById("moreInfoPopup");
+const closePopup = document.getElementById("closePopup");
+
+if (moreInfoBtn && moreInfoPopup && closePopup) {
+  moreInfoBtn.addEventListener("click", () => {
+    moreInfoPopup.style.display = "flex";
+  });
+  closePopup.addEventListener("click", () => {
+    moreInfoPopup.style.display = "none";
+  });
+  window.addEventListener("click", (e) => {
+    if (e.target === moreInfoPopup) {
+      moreInfoPopup.style.display = "none";
+    }
+  });
+}
